@@ -17,6 +17,15 @@ namespace c_sharp_intro
 
             ...and We end multi-line comments with an asterisk followed by a forward-slash */
             Console.WriteLine("Hello, " + myName);
+
+            Console.WriteLine("Please Enter Your Name...");
+            // Assign variable 'userName' to a value entered by the user.
+            string userName = Console.ReadLine();
+            //Show the user we colleted the name.
+            Console.WriteLine("You have entered: " + userName);
+            // Instead of traditional concatenation using the addition opeartor...
+            // We can use string interpolation(placeholder) to embed values in a string!
+            Console.WriteLine("Hey {0}, You're Looking Great Today!", userName);
         }
     }
 }
