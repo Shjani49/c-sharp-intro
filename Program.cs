@@ -7,51 +7,23 @@ namespace c_sharp_intro
     {
         static void Main(string [] args)
         {
-            Console.WriteLine("Please tell us if you want to add,subtract, or multiply: (Add/ Subtract/ multiply)");
-            string userOperator = Console.ReadLine();
-            // Check if the use typed: add
-            if( userOperator == "Add")
+            Console.WriteLine("Enter a number");
+            int userInt = Int32.Parse(Console.ReadLine());
+            if (  userInt > 10)
             {
-                Console.WriteLine("Please enter the first number: ");
-                // @Link : https://stackoverflow.com/questions/1019793/how-can-i-convert-string-to-int
-                int firstNum = Int32.Parse(Console.ReadLine()); // Convert string to integer.
-
-                Console.WriteLine("Please enter the second number: ");
-                int secondNum = Int32.Parse(Console.ReadLine()); // Convert string to integer.
-                // Calculate the result
-                int result = firstNum + secondNum ;
-                Console.WriteLine("{0} + {1} = {2}",firstNum, secondNum, result);
+                Console.WriteLine("Greater than 10.");
             }
-            // Check "else" if user did not typed 
-            else if( userOperator == "Subtract")
+            else if (  userInt > 5)
             {
-                Console.WriteLine("Please enter the first number: ");
-                // @Link : https://stackoverflow.com/questions/1019793/how-can-i-convert-string-to-int
-                int firstNum = Int32.Parse(Console.ReadLine()); // Convert string to integer.
-
-                Console.WriteLine("Please enter the second number: ");
-                int secondNum = Int32.Parse(Console.ReadLine()); // Convert string to integer.
-                // Calculate the result.
-                int result = firstNum - secondNum ;
-                Console.WriteLine("{0} - {1} = {2}",firstNum, secondNum, result);
-                
+                Console.WriteLine("Greater than 5 and less than 11.");
             }
-            else if( userOperator == "Multiply")
+            else if (  userInt < 0)
             {
-                Console.WriteLine("Please enter the first number: ");
-                // @Link : https://stackoverflow.com/questions/1019793/how-can-i-convert-string-to-int
-                int firstNum = Int32.Parse(Console.ReadLine()); // Convert string to integer.
-
-                Console.WriteLine("Please enter the second number: ");
-                int secondNum = Int32.Parse(Console.ReadLine()); // Convert string to integer.
-                // Calculate the result.
-                int result = firstNum * secondNum ;
-                Console.WriteLine("{0} * {1} = {2}",firstNum, secondNum, result);
-                
+                Console.WriteLine("A negative Number");
             }
             else
             {
-                Console.WriteLine("Invalid Operator entered.");
+                Console.WriteLine("Number is between 0 to 5");
             }
         }
     }
