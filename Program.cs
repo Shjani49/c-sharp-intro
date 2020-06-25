@@ -7,21 +7,35 @@ namespace c_sharp_intro
     {
         static void Main(string [] args)
         {
-            // It is a good idea, for user experience, prompt the user.
-            // Guiding the user is great, as it tells them waht is excepted.
-            Console.WriteLine("Please enter a string:");
-            string userInput = Console.ReadLine(); // Assignment; colleccting data from the user.
+            Console.WriteLine("Please tell us if you want to add or subtract: (add/ subtract)");
+            string userOperator = Console.ReadLine();
+            // Check if the use typed: add
+            if( userOperator == "add")
+            {
+                Console.WriteLine("Please enter the first number: ");
+                // @Link : https://stackoverflow.com/questions/1019793/how-can-i-convert-string-to-int
+                int firstNum = Int32.Parse(Console.ReadLine()); // Convert string to integer.
 
-            // We can use "if" statements to check a "Condition".
-            // If the "if statement" is true, its code block (marked by curly braces {} will execute.)
-           if(userInput.Length > 0)
-           {
-               Console.WriteLine("The User Entered a value.");
-           } // If there is an "else" statement procedding an "if", it will only execute if the "if statement" was false.
-           else
-           {
-               Console.WriteLine("The User did not Entered a value");
-           }
+                Console.WriteLine("Please enter the second number: ");
+                int secondNum = Int32.Parse(Console.ReadLine()); // Convert string to integer.
+                // Calculate the result
+                int result = firstNum + secondNum ;
+                Console.WriteLine("{0} + {1} = {2}",firstNum, secondNum, result);
+            }
+            // Check "else" if user did not typed 
+            else if( userOperator == "subtract")
+            {
+                Console.WriteLine("Please enter the first number: ");
+                // @Link : https://stackoverflow.com/questions/1019793/how-can-i-convert-string-to-int
+                int firstNum = Int32.Parse(Console.ReadLine()); // Convert string to integer.
+
+                Console.WriteLine("Please enter the second number: ");
+                int secondNum = Int32.Parse(Console.ReadLine()); // Convert string to integer.
+                // Calculate the result.
+                int result = firstNum - secondNum ;
+                Console.WriteLine("{0} - {1} = {2}",firstNum, secondNum, result);
+                
+            }
         }
     }
 }
