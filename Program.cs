@@ -7,56 +7,24 @@ namespace c_sharp_intro
     {
         static void Main(string [] args)
         {
-            //Logical Operators
-            // OR will evaluate to TRUE if EITHER side id TRUE.
-            Console.WriteLine( true || true ); // || is OR // True
-            Console.WriteLine( false || true) ; // || is OR // True
-            Console.WriteLine( false || false ); // False
+            // It is a good idea, for user experience, prompt the user.
+            // Guiding the user is great, as it tells them waht is excepted.
+            Console.WriteLine("Please enter a string:");
+            string userInput = Console.ReadLine(); // Assignment; colleccting data from the user.
 
-            // AND will evaluate to TRUE only if BOTH side id TRUE.
-            Console.WriteLine( true && true ); // && is AND // True
-            Console.WriteLine( false && true ); // && is AND // False
-            Console.WriteLine( false && false ); // False
-
-
-            // How does this behave with different data-types?
-            //Console.WriteLine(true && 1); // IT DOESN'T !
-
-            //  Comparative operators...
-            // "Equal to"check.
-            Console.WriteLine( false == false ); // True
-            Console.WriteLine( true == false ); // False
-            Console.WriteLine( 2.25 == 2.25 ); // True
-            Console.WriteLine( 2.25 == 3.14 ); // False
-            //Console.WriteLine( 3.14 == "3.14" ); // ??? can't be apllied because two different data types !
-
-
-            // "Greater than" check
-                Console.WriteLine( 6 > 7 ); // False
-                Console.WriteLine( 10 > 5 ); // True          
-
-            // "Less than" check
-                Console.WriteLine( 6 < 7 ); // True
-                Console.WriteLine( 10 < 5 ); // False         
-            
-            // "Greater-than-or-equal-to" check
-                Console.WriteLine( 5 >= 5 ); // True
-                Console.WriteLine( 10 >= 5 ); // True          
-                Console.WriteLine( 4 >= 5 ); // False
-
-            // "Less-than-or-equal-to" check
-                Console.WriteLine( 5 <= 5 ); // True
-                Console.WriteLine( 10 <= 5 ); // False
-                Console.WriteLine( 4 <= 5 ); // True
-
-            // "NOt-Equal-to" check
-               Console.WriteLine( false != false ); // False
-               Console.WriteLine( true != false ); // True 
-               Console.WriteLine( 5 != 5 ); // False
-               Console.WriteLine( 10 != 5 ); // True
-
+            // We can use "if" statements to check a "Condition".
+            // If the "if statement" is true, its code block (marked by curly braces {} will execute.)
+           if(userInput.Length > 0)
+           {
+               Console.WriteLine("The User Entered a value.");
+           } // If there is an "else" statement procedding an "if", it will only execute if the "if statement" was false.
+           else
+           {
+               Console.WriteLine("The User did not Entered a value");
+           }
         }
     }
 }
+
     
 
