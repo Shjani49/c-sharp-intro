@@ -7,25 +7,61 @@ namespace c_sharp_intro
     {
         static void Main(string[] args)
         {
-            // 2 dimensional array !
-           string[,] topics = { {"cat", "dog", "frog", "hedgehog"},
-                                {"zebra","giraffe","lion","elephant"},
-                                {"dolphine","octous","Shark","whale" }};
-            // Loop through the rows...
-            for( int row = 0; row<topics.GetLength(0); row++)
+            //Prompt the user.
+            Console.WriteLine("please type: (add/subtraction/multiplication/exit)");
+            string command;// Declare a variable.
+            // Accept Commands.
+            while ( ( command = Console.ReadLine()) != "exit" )
             {
-                // Output Current Row...
-                Console.WriteLine(" Starting row #{0}", row);  
-                // Loop through columns in the current row...
-                for(int column =0; column< topics.GetLength(1); column++)
+                int result;
+                if( command == "add")
                 {
-                    // Output Current Column...
-                    Console.WriteLine(" Starting column #{0}", column);
-                    // Output the current animal !
-                    Console.WriteLine(" This animal: {0}",topics[row,column]);   
-                } 
-            }
+                    Console.WriteLine(" Enter the first Number to add: ");
+                    int firstNum = Int32.Parse( Console.ReadLine() );
+                    Console.WriteLine(" Enter the Second Number to add: ");
+                    int secondNum= Int32.Parse( Console.ReadLine() );
+                    result = Addition( firstNum,secondNum );
+                    Console.WriteLine("The result is :{0}",result);
+
+                }
+                else if( command == "subtraction")
+                {
+                     Console.WriteLine(" Enter the first Number to sub: ");
+                    int firstNum = Int32.Parse( Console.ReadLine() );
+                    Console.WriteLine(" Enter the Second Number to sub: ");
+                    int secondNum= Int32.Parse( Console.ReadLine() );
+                    result = Subtraction( firstNum,secondNum );
+                    Console.WriteLine("The result is :{0}",result);
+                }
+                else if( command == "multiplication")
+                {
+                    Console.WriteLine(" Enter the first Number to sub: ");
+                    int firstNum = Int32.Parse( Console.ReadLine() );
+                    Console.WriteLine(" Enter the Second Number to sub: ");
+                    int secondNum= Int32.Parse( Console.ReadLine() );
+                    result = Multiplication( firstNum,secondNum );
+                    Console.WriteLine("The result is :{0}",result);
+                }
+                else 
+                {
+                    Console.WriteLine("Invalid Command,Pleae try again");
+                }
+                Console.WriteLine("Please try again: add/subtract/multiply/exit");
+            }// End of While Loop.
         }
+        static int Addition( int num1, int num2)
+        {
+            return num1 + num2;
+        }
+        static int Subtraction( int num1, int num2)
+        {
+            return num1 - num2;
+        }
+        static int Multiplication( int num1, int num2)
+        {
+            return num1 * num2;
+        }
+        
     }
 }
 
