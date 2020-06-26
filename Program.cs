@@ -17,9 +17,9 @@ namespace c_sharp_intro
                 if( command == "add")
                 {
                     Console.WriteLine(" Enter the first Number to add: ");
-                    int firstNum = Int32.Parse( Console.ReadLine() );
+                    int firstNum = CollectIntFromUser();
                     Console.WriteLine(" Enter the Second Number to add: ");
-                    int secondNum= Int32.Parse( Console.ReadLine() );
+                    int secondNum= CollectIntFromUser();
                     result = Addition( firstNum,secondNum );
                     Console.WriteLine("The result is :{0}",result);
 
@@ -27,18 +27,18 @@ namespace c_sharp_intro
                 else if( command == "subtraction")
                 {
                      Console.WriteLine(" Enter the first Number to sub: ");
-                    int firstNum = Int32.Parse( Console.ReadLine() );
+                    int firstNum = CollectIntFromUser();
                     Console.WriteLine(" Enter the Second Number to sub: ");
-                    int secondNum= Int32.Parse( Console.ReadLine() );
+                    int secondNum= CollectIntFromUser();
                     result = Subtraction( firstNum,secondNum );
                     Console.WriteLine("The result is :{0}",result);
                 }
                 else if( command == "multiplication")
                 {
                     Console.WriteLine(" Enter the first Number to sub: ");
-                    int firstNum = Int32.Parse( Console.ReadLine() );
+                    int firstNum = CollectIntFromUser();
                     Console.WriteLine(" Enter the Second Number to sub: ");
-                    int secondNum= Int32.Parse( Console.ReadLine() );
+                    int secondNum= CollectIntFromUser();
                     result = Multiplication( firstNum,secondNum );
                     Console.WriteLine("The result is :{0}",result);
                 }
@@ -60,6 +60,28 @@ namespace c_sharp_intro
         static int Multiplication( int num1, int num2)
         {
             return num1 * num2;
+        }
+
+        static int CollectIntFromUser()
+        {
+            int intValue =0;
+            bool error = true;
+            while ( error == true)
+            {
+                string userValue = Console.ReadLine();
+                try // Wrap potentially-failing code in a try - this will prevent an unhandled exception (fatal error for your program.)
+                {
+                     intValue = int.Parse(userValue); // attempt to convert the string..
+                     error = false; // If we get here, we're good to return the int!
+                    
+                }
+                catch ( Exception exception )
+                { // We use "catch" to decide what happens if the "try" has an error !
+                    Console.WriteLine("Inavalid value Entered. Please enter a number: "); 
+                    Console.WriteLine(exception.Message); // The exception has its own error message - helpful to know what is failing!
+                }
+            }// End of the while loop.
+            return intValue; // Ends execution of the method, and passesthe value back.
         }
         
     }
